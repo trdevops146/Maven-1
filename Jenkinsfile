@@ -7,7 +7,7 @@ pipeline {
     stages{
         stage('Using the variables defined'){
             steps{
-                echo 'app name is ${APP_NAME}'
+                echo "app name is ${APP_NAME}"
             }
         }
     }
