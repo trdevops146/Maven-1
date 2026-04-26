@@ -1,37 +1,13 @@
 pipeline {
     agent any
-    tools{
-        maven "mymaven"
+    environment{
+        APP_NAME = "mydemoapp"
+        APP_URL = "console.amazon.com"
     }
     stages{
-        stage('Clone github repo'){
+        stage('Using the variables defined'){
             steps{
-                echo 'Cloning the github repo'
-                git 'https://github.com/trdevops146/Maven-1.git'
-
-            }
-        }
-        stage('Compile the code'){
-            steps{
-                echo 'Cloning the github repo'
-                sh 'mvn compile'
-                script{
-                    timeout(time: 10, unit: 'SECONDS') {
-                    input 'Continue to test'
-                    }
-                }
-            }
-        }
-        stage('Test the code'){
-            steps{
-                echo 'Testing the code'
-                sh 'mvn test'
-            }
-        }
-        stage('Package the code'){
-            steps{
-                echo 'Packing the code'
-                sh 'mvn package'
+                echo 'app name is ${APP_NAME}'
             }
         }
     }
