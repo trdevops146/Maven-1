@@ -4,7 +4,7 @@ pipeline{
         stage('Build the code'){
             when{ 
                 expression{
-                    params.environment == 'dev'
+                    params.env == 'dev'
                 }
             }
             steps{
