@@ -15,6 +15,21 @@ pipeline {
             steps{
                 echo 'Cloning the github repo'
                 sh 'mvn compile'
+                script{
+                    input 'Continue to test'
+                }
+            }
+        }
+        stage('Test the code'){
+            steps{
+                echo 'Testing the code'
+                sh 'mvn test'
+            }
+        }
+        stage('Package the code'){
+            steps{
+                echo 'Packing the code'
+                sh 'mvn package'
             }
         }
     }
