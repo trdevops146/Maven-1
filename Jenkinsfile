@@ -16,7 +16,9 @@ pipeline {
                 echo 'Cloning the github repo'
                 sh 'mvn compile'
                 script{
+                    timeout(time: 10, unit: 'SECONDS') {
                     input 'Continue to test'
+                    }
                 }
             }
         }
