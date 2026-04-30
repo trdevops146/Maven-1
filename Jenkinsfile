@@ -9,7 +9,7 @@ pipeline{
             }
             steps{
                 retry(3){
-                sh 'mvn test'
+                sh 'mvn tst'
                 }
             }
 
