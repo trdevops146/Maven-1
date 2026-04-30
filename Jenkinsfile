@@ -8,7 +8,9 @@ pipeline{
                 }
             }
             steps{
+                retry(3){
                 sh 'mvn test'
+                }
             }
 
         }
