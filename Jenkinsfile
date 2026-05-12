@@ -12,7 +12,7 @@ pipeline{
         stage('Build and compile code'){
             steps{
                 sh '''
-                mvn build
+                mvn clean install
                 '''
             }
         }
