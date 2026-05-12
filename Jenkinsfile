@@ -4,6 +4,11 @@ pipeline{
         maven 'mymaven'
     }
     stages{
+        stage('print the build number'){
+            steps{
+                echo "Build number is ${BUILD_NUMBER}"
+            }
+        }
         stage('Clonerepo'){
         steps{
             git url: 'https://github.com/trdevops146/Maven-1.git'
