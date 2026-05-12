@@ -1,18 +1,10 @@
-pipeline{
+pipeline {
     agent any
     stages{
-        stage('Build the code'){
-            when{ 
-                expression{
-                    params.env == 'dev'
-                }
-            }
+        stage('Clonerepo'){
             steps{
-                retry(3){
-                sh 'mvn tst'
-                }
+                git 'https://github.com/trdevops146/Maven-1.git'
             }
-
         }
     }
 }
