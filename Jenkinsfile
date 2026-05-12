@@ -13,7 +13,9 @@ pipeline{
         steps{
             git url: 'https://github.com/trdevops146/Maven-1.git'
         script{
+        timeout(time: 60, unit: 'SECONDS') {
             input 'Continue to build and compile code'
+        }
         }
         }
     }
