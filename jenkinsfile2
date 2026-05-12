@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Read the value from the parameter'){
             steps{
-                echo "name of the job is ${param.nam}"
+                echo "name of the job is ${params.nam}"
             }
         }
     }
