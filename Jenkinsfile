@@ -1,10 +1,21 @@
-pipeline {
+pipeline{
     agent any
+    tools{
+        maven 'mymaven'
+    }
     stages{
-        stage('Clonerepo1'){
+        stage('Clonerepo'){
+        steps{
+            git url: 'https://github.com/trdevops146/Maven-1.git'
+        }
+    }
+        stage('Build and compile code'){
             steps{
-                git 'https://github.com/trdevops146/Maven-1.git'
+                sh '''
+                mvn build
+                '''
             }
         }
+
     }
 }
