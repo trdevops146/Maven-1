@@ -21,9 +21,11 @@ pipeline{
     }
         stage('Build and compile code'){
             steps{
+                retry(3){
                 sh '''
-                mvn clean install
+                mvn pdl
                 '''
+                }
             }
         }
 
