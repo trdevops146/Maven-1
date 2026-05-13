@@ -2,8 +2,13 @@ pipeline {
     agent any
     stages{
         stage('Read the value from the parameter'){
+            when{
+                expression{
+                    params.name == 'abc'
             steps{
                 echo "name of the job is ${params.nam}"
+            }
+            }
             }
         }
     }
