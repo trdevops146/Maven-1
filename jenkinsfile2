@@ -4,7 +4,7 @@ pipeline {
         stage('Read the value from the parameter'){
             when{
                 expression{
-                    params.name == 'abc'
+                    params.nam == 'abc'
             steps{
                 echo "name of the job is ${params.nam}"
             }
