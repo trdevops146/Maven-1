@@ -10,12 +10,14 @@ pipeline {
             }
         }
         stage('build'){
-            script{
-                try{
-                    sh 'mvn comp'
-                }
-                catch{
-                    sh 'mvn compile'
+            steps{
+                script{
+                    try{
+                        sh 'mvn comp'
+                    }
+                    catch{
+                        sh 'mvn compile'
+                    }
                 }
             }
         }
